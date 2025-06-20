@@ -2,72 +2,128 @@ export default function TipsSection() {
   const tips = [
     {
       title: "Start with Free Tiers",
-      description: "Most AI tools offer free tiers. Try them out before committing to paid plans.",
+      description: "Most AI tools offer generous free tiers in 2025. Try ChatGPT, Windsurf, and Perplexity free before upgrading to paid plans.",
       icon: "💡",
       color: "#3b82f6"
     },
     {
-      title: "Use Specific Prompts",
-      description: "Be specific in your requests. Instead of 'fix this code', say 'fix the syntax error in line 15'.",
-      icon: "🎯",
+      title: "Master Reasoning Models",
+      description: "Use 'thinking' prompts like 'think step by step' or 'analyze this problem' to activate reasoning modes in Claude 4, o3, and Gemini 2.5.",
+      icon: "🧠",
       color: "#10b981"
     },
     {
-      title: "Learn Keyboard Shortcuts",
-      description: "Master shortcuts in your AI editor to boost productivity. Cursor and VS Code have excellent shortcuts.",
-      icon: "⌨️",
+      title: "Leverage Agent Modes",
+      description: "Let AI agents work autonomously on complex tasks. Use Cursor's Agent mode for coding or ChatGPT's Operators for web tasks.",
+      icon: "🤖",
       color: "#8b5cf6"
     },
     {
-      title: "Review AI Suggestions",
-      description: "Always review AI-generated code. AI tools are powerful but not perfect.",
-      icon: "👀",
+      title: "Be Context-Aware",
+      description: "Provide rich context in your prompts. Upload documents to Claude, reference previous conversations, and be specific about your goals.",
+      icon: "📋",
       color: "#f59e0b"
     },
     {
-      title: "Combine Multiple Tools",
-      description: "Use different AI tools for different tasks. Research with Perplexity, code with Cursor, chat with ChatGPT.",
-      icon: "🔗",
+      title: "Use Multi-Modal Inputs",
+      description: "Don't just type - use voice with ChatGPT, upload images to analyze, and share screens with Copilot Vision for better assistance.",
+      icon: "🎭",
       color: "#ef4444"
     },
     {
-      title: "Keep Learning",
-      description: "AI tools evolve rapidly. Stay updated with new features and capabilities.",
-      icon: "📚",
+      title: "Protect Your Privacy",
+      description: "Use privacy modes when available, understand data policies, and consider local models for sensitive work. Enable Claude's privacy mode or use private search in Perplexity.",
+      icon: "🛡️",
       color: "#06b6d4"
+    },
+    {
+      title: "Build AI Tool Stacks",
+      description: "Combine specialized tools: Cursor for coding, Perplexity for research, Claude for analysis. Each excels at different tasks.",
+      icon: "🔗",
+      color: "#ec4899"
+    },
+    {
+      title: "Optimize for Cost",
+      description: "Use free tiers strategically, time usage during off-peak hours for APIs, and choose the right model size for your task complexity.",
+      icon: "💰",
+      color: "#84cc16"
     }
   ];
 
   const workflows = [
     {
-      title: "Development Workflow",
+      title: "Modern Development Workflow",
       steps: [
-        "Research problem with Perplexity or Gemini",
-        "Code solution with Cursor or GitHub Copilot",
-        "Review and refine with Claude",
-        "Document with ChatGPT"
+        "Research with Perplexity's enhanced Sonar models",
+        "Code with Cursor's Agent mode or Windsurf's Cascade",
+        "Review and debug with Claude 4's superior analysis",
+        "Document and explain with ChatGPT's reasoning models",
+        "Deploy using integrated CI/CD features"
       ],
       color: "#3b82f6"
     },
     {
-      title: "Learning Workflow",
+      title: "Research & Analysis Workflow",
       steps: [
-        "Ask concepts questions to ChatGPT",
-        "Practice coding with Replit Ghostwriter",
-        "Get code explanations from Claude",
-        "Join communities for discussions"
+        "Deep research with Perplexity Enterprise Pro",
+        "Analyze large documents with Claude's 1M+ token context",
+        "Cross-reference findings with Gemini's real-time data",
+        "Synthesize insights using reasoning models",
+        "Create reports with cited sources"
       ],
       color: "#10b981"
     },
     {
-      title: "Creative Workflow",
+      title: "Creative Content Workflow",
       steps: [
-        "Brainstorm ideas with ChatGPT",
-        "Develop characters with Character.AI",
-        "Code creative projects with Cursor",
-        "Share and get feedback"
+        "Brainstorm concepts with ChatGPT's advanced reasoning",
+        "Develop characters with Character.AI's enhanced features",
+        "Create interactive content with Claude's Artifacts",
+        "Generate visuals with DALL-E or Midjourney integration",
+        "Refine and publish across platforms"
       ],
       color: "#8b5cf6"
+    },
+    {
+      title: "Enterprise Team Workflow",
+      steps: [
+        "Secure setup with Microsoft Copilot or Claude Enterprise",
+        "Collaborative development with shared AI workspaces",
+        "Code review using AI-powered analysis tools",
+        "Knowledge management with enterprise search",
+        "Governance and audit trail monitoring"
+      ],
+      color: "#f59e0b"
+    }
+  ];
+
+  const advancedTips = [
+    {
+      category: "Prompt Engineering 2025",
+      tips: [
+        "Use role-based prompting: 'Act as a senior developer...'",
+        "Request reasoning: 'Show your thinking process'",
+        "Set constraints: 'Use only TypeScript, no external libraries'",
+        "Ask for alternatives: 'Provide 3 different approaches'"
+      ]
+    },
+    {
+      category: "Tool Selection Strategy",
+      tips: [
+        "Claude 4 for complex coding and large context analysis",
+        "ChatGPT o3 for mathematical reasoning and logic problems",
+        "Perplexity for research requiring current information",
+        "Cursor for professional development with AI assistance"
+      ]
+    },
+    {
+      category: "Productivity Hacks",
+      tips: [
+        "Create custom prompts and save them as templates",
+        "Use keyboard shortcuts in AI-enabled editors",
+        "Set up automated workflows with API integrations",
+        "Monitor your usage to optimize costs and efficiency"
+      ]
     }
   ];
 
@@ -76,15 +132,15 @@ export default function TipsSection() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-6">
-            Pro Tips & Best Practices
+            AI Mastery Guide for 2025
           </h2>
           <p className="text-xl text-[var(--foreground)]/70 max-w-3xl mx-auto">
-            Maximize your productivity with these expert tips for using AI tools effectively
+            Master the latest AI tools and techniques with these expert tips for reasoning models, agent workflows, and productivity optimization
           </p>
         </div>
 
-        {/* Tips Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
+        {/* Essential Tips Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
           {tips.map((tip, index) => (
             <div 
               key={tip.title}
@@ -105,12 +161,12 @@ export default function TipsSection() {
         </div>
 
         {/* Workflow Section */}
-        <div className="mb-12">
+        <div className="mb-16">
           <h3 className="text-3xl font-bold text-center mb-12 text-[var(--foreground)]">
-            Recommended Workflows
+            Proven AI Workflows for 2025
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {workflows.map((workflow, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {workflows.map((workflow) => (
               <div 
                 key={workflow.title}
                 className="bg-[var(--card-bg)] rounded-xl p-6 card-hover border border-[var(--border)]"
@@ -138,31 +194,85 @@ export default function TipsSection() {
           </div>
         </div>
 
+        {/* Advanced Tips Section */}
+        <div className="mb-16">
+          <h3 className="text-3xl font-bold text-center mb-12 text-[var(--foreground)]">
+            Advanced Techniques
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {advancedTips.map((section) => (
+              <div 
+                key={section.category}
+                className="bg-[var(--card-bg)] rounded-xl p-6 border border-[var(--border)]"
+              >
+                <h4 className="text-lg font-bold mb-4 text-[var(--foreground)]">
+                  {section.category}
+                </h4>
+                <ul className="space-y-3">
+                  {section.tips.map((tip, tipIndex) => (
+                    <li key={tipIndex} className="flex items-start text-sm text-[var(--foreground)]/70">
+                      <span className="text-blue-500 mr-2 mt-1 flex-shrink-0">•</span>
+                      {tip}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Cost Optimization Guide */}
+        <div className="mb-16 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 rounded-2xl p-8">
+          <h3 className="text-2xl font-bold mb-6 text-[var(--foreground)] text-center">
+            💡 Cost Optimization Strategy
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <h4 className="font-bold text-[var(--foreground)] mb-3">Free Tier Maximization:</h4>
+              <ul className="text-sm text-[var(--foreground)]/70 space-y-2">
+                <li>• Start with ChatGPT Free, Windsurf, and Perplexity</li>
+                <li>• Use multiple accounts across different tools</li>
+                <li>• Time your usage during off-peak API hours</li>
+                <li>• Leverage free GPU credits from providers</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-bold text-[var(--foreground)] mb-3">Smart Upgrading:</h4>
+              <ul className="text-sm text-[var(--foreground)]/70 space-y-2">
+                <li>• Upgrade only your most-used tool first</li>
+                <li>• Choose annual plans for 15-20% savings</li>
+                <li>• Consider team plans for better per-user pricing</li>
+                <li>• Monitor usage patterns before committing</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
         {/* Call to Action */}
         <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl p-8 text-center border border-blue-200/20 dark:border-purple-300/20">
           <h3 className="text-2xl font-bold mb-4 text-[var(--foreground)]">
-            Ready to Supercharge Your Workflow? 🚀
+            Ready to Master AI in 2025? 🚀
           </h3>
           <p className="text-[var(--foreground)]/70 mb-6 max-w-2xl mx-auto">
-            Start with one tool that matches your needs, then gradually expand your AI toolkit. 
-            Remember, the best AI tool is the one you'll actually use consistently.
+            The AI landscape has matured significantly. Start with reasoning models, experiment with agent workflows, 
+            and build your personalized AI tool stack. The future of productivity is here.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
               href="#editors" 
               className="bg-[var(--primary)] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[var(--primary-dark)] transition-all transform hover:scale-105"
             >
-              Explore Code Editors
+              Start with AI Code Editors
             </a>
             <a 
               href="#chatbots" 
               className="bg-[var(--secondary)] text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-all transform hover:scale-105"
             >
-              Try AI Chatbots
+              Explore AI Assistants
             </a>
           </div>
         </div>
       </div>
     </section>
   );
-} 
+}

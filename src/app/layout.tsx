@@ -15,6 +15,13 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "AI Guide - Your Ultimate AI Tools Resource",
   description: "Discover the best AI code editors, chatbots, and tools to enhance your development workflow. Compare Cursor, Windsurf, ChatGPT, Claude, Gemini, and more.",
+  icons: {
+    icon: "/website-icon.ico",
+    other: {
+      rel: "icon",
+      url: "/website-icon.png",
+    },
+  },
 };
 
 export default function RootLayout({

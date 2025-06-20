@@ -18,26 +18,31 @@ interface Editor {
 const editors: Editor[] = [
   {
     name: "Cursor",
-    description: "An AI-powered code editor built on VS Code with advanced AI capabilities for code generation, debugging, and refactoring.",
+    description: "The leading AI-powered code editor built on VS Code, valued at $9 billion in 2025. Features advanced AI capabilities including autonomous agent mode and deep codebase understanding.",
     features: [
-      "AI-powered code completion",
-      "Chat with your codebase",
-      "AI code review and suggestions",
-      "Multi-file editing",
-      "Built on VS Code",
-      "Local and cloud AI models"
+      "AI-powered autocomplete and multi-line edits",
+      "Chat with your entire codebase",
+      "Autonomous Agent mode for complex tasks",
+      "Multi-file editing with context",
+      "Built on VS Code with full compatibility",
+      "Privacy mode with local processing",
+      "Custom .cursorrules for AI behavior",
+      "Tab to apply code suggestions"
     ],
     pricing: "Free tier available, Pro at $20/month",
     pros: [
-      "Excellent AI integration",
-      "VS Code compatibility",
-      "Privacy-focused options",
-      "Fast and responsive"
+      "Most advanced AI integration available",
+      "Excellent VS Code compatibility",
+      "Strong privacy controls",
+      "Powerful agent mode for automation",
+      "Fast and highly responsive",
+      "Great community and support"
     ],
     cons: [
-      "Relatively new",
-      "Limited free tier",
-      "Requires internet for best features"
+      "Can be overwhelming for beginners",
+      "Premium features require subscription",
+      "Occasional AI suggestion inconsistencies",
+      "Interface can get cluttered"
     ],
     website: "https://cursor.sh",
     logo: {
@@ -48,28 +53,33 @@ const editors: Editor[] = [
   },
   {
     name: "Windsurf",
-    description: "Advanced AI development environment with intelligent code assistance and collaborative features for modern development workflows.",
+    description: "The first agentic IDE by Codeium, featuring the revolutionary Cascade Flow system that provides deep contextual awareness and collaborative AI coding experience.",
     features: [
-      "Real-time AI assistance",
-      "Collaborative coding",
-      "Smart code generation",
-      "Multi-language support",
-      "Integrated debugging",
-      "Cloud synchronization"
+      "Cascade Flow - agentic AI system",
+      "Real-time collaborative coding",
+      "Deep contextual awareness",
+      "Smart autocomplete and generation",
+      "Multi-language support (70+ languages)",
+      "Privacy-first approach",
+      "Integrated with 40+ IDEs",
+      "Live preview and instant deployment"
     ],
-    pricing: "Free tier available, Premium plans from $15/month",
+    pricing: "Free for individuals, Pro plans from $15/month",
     pros: [
-      "Great collaboration features",
-      "Intelligent AI suggestions",
-      "Cross-platform support",
-      "Good performance"
+      "Clean and intuitive interface",
+      "Excellent free tier",
+      "Strong collaborative features",
+      "Privacy-focused design",
+      "Fast performance",
+      "Innovative Cascade Flow system"
     ],
     cons: [
-      "Newer to market",
-      "Learning curve",
-      "Internet dependency"
+      "Relatively new to market",
+      "Limited offline capabilities",
+      "Some features still in beta",
+      "Learning curve for advanced features"
     ],
-    website: "https://windsurf.ai",
+    website: "https://windsurf.com",
     logo: {
       src: "/code-editor-icons/windsurf-ai-code-editor-icon.png",
       alt: "Windsurf AI Code Editor Icon"
@@ -78,26 +88,31 @@ const editors: Editor[] = [
   },
   {
     name: "GitHub Copilot",
-    description: "AI pair programmer by GitHub and OpenAI that helps you write code faster with AI-powered code suggestions.",
+    description: "Microsoft's flagship AI coding assistant with new 2025 pricing tiers, agent mode, and integration across the entire development lifecycle from code to deployment.",
     features: [
-      "AI code suggestions",
-      "Multi-language support",
-      "IDE integrations",
-      "Context-aware completions",
-      "Documentation generation",
-      "Test generation"
+      "AI code completion and suggestions",
+      "Copilot Chat in multiple IDEs",
+      "Agent mode for autonomous tasks",
+      "Multi-model support (GPT-4o, Claude, etc.)",
+      "Code review and security scanning",
+      "Pull request assistance",
+      "CLI integration and mobile support",
+      "Enterprise-grade security features"
     ],
-    pricing: "$10/month for individuals, $19/month for business",
+    pricing: "Free (limited), Pro $10/month, Pro+ $39/month",
     pros: [
-      "Excellent AI training",
-      "Wide IDE support",
-      "Strong community",
-      "Reliable performance"
+      "Excellent AI model training",
+      "Wide IDE and platform support",
+      "Strong enterprise features",
+      "Active development and updates",
+      "Good documentation",
+      "Integration with GitHub ecosystem"
     ],
     cons: [
-      "Subscription required",
-      "Privacy concerns",
-      "Can suggest outdated code"
+      "Premium requests are limited",
+      "Additional costs for advanced models",
+      "Privacy concerns for some users",
+      "Complex pricing structure"
     ],
     website: "https://github.com/features/copilot",
     logo: {
@@ -107,32 +122,37 @@ const editors: Editor[] = [
     color: "#8b5cf6"
   },
   {
-    name: "Replit Ghostwriter",
-    description: "AI-powered coding assistant integrated into Replit's online IDE for collaborative coding and learning.",
+    name: "Replit AI",
+    description: "Integrated AI assistant within Replit's cloud-based IDE, perfect for learning, prototyping, and collaborative development with instant deployment capabilities.",
     features: [
-      "AI code completion",
-      "Code explanation",
-      "Bug fixing assistance",
-      "Code generation",
-      "Online IDE integration",
-      "Educational features"
+      "Complete Code AI pair programming",
+      "Generate Code from natural language",
+      "Explain Code functionality",
+      "Transform and refactor code",
+      "Replit Agent for app building",
+      "Real-time collaboration",
+      "Instant web deployment",
+      "Mobile coding support"
     ],
-    pricing: "Free tier available, Pro plans from $7/month",
+    pricing: "Free tier available, Core plans from $20/month",
     pros: [
-      "Great for learning",
-      "Web-based",
-      "Educational focus",
-      "Collaborative features"
+      "Perfect for beginners and education",
+      "Instant setup and deployment",
+      "Strong collaborative features",
+      "Mobile-friendly coding",
+      "Great for prototyping",
+      "Active learning community"
     ],
     cons: [
-      "Limited offline capability",
-      "Smaller model",
-      "Less advanced features"
+      "Cloud-dependent (requires internet)",
+      "Limited for complex enterprise projects",
+      "Performance constraints on free tier",
+      "Less sophisticated than desktop IDEs"
     ],
     website: "https://replit.com",
     logo: {
       src: "/code-editor-icons/replit-ghostwriter-ai-code-editor-icon.png",
-      alt: "Replit Ghostwriter Code Editor Icon"
+      alt: "Replit AI Code Editor Icon"
     },
     color: "#f59e0b"
   }
@@ -144,10 +164,11 @@ export default function CodeEditorsSection() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-6">
-            AI Code Editors
+            AI Code Editors - 2025 Edition
           </h2>
           <p className="text-xl text-[var(--foreground)]/70 max-w-3xl mx-auto">
-            Transform your coding experience with these powerful AI-enhanced development environments
+            Transform your coding experience with these cutting-edge AI-enhanced development environments. 
+            Updated with the latest features, pricing, and capabilities for 2025.
           </p>
         </div>
 
@@ -180,10 +201,10 @@ export default function CodeEditorsSection() {
 
               <div className="mb-6">
                 <h4 className="font-semibold mb-3 text-[var(--foreground)]">Key Features:</h4>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                <ul className="grid grid-cols-1 gap-2">
                   {editor.features.map((feature) => (
                     <li key={feature} className="flex items-center text-sm text-[var(--foreground)]/70">
-                      <span className="w-2 h-2 rounded-full mr-3" style={{backgroundColor: editor.color}}></span>
+                      <span className="w-2 h-2 rounded-full mr-3 flex-shrink-0" style={{backgroundColor: editor.color}}></span>
                       {feature}
                     </li>
                   ))}
@@ -196,7 +217,7 @@ export default function CodeEditorsSection() {
                   <ul className="text-sm text-[var(--foreground)]/70 space-y-1">
                     {editor.pros.map((pro) => (
                       <li key={pro} className="flex items-start">
-                        <span className="text-green-500 mr-2">✓</span>
+                        <span className="text-green-500 mr-2 flex-shrink-0">✓</span>
                         {pro}
                       </li>
                     ))}
@@ -207,7 +228,7 @@ export default function CodeEditorsSection() {
                   <ul className="text-sm text-[var(--foreground)]/70 space-y-1">
                     {editor.cons.map((con) => (
                       <li key={con} className="flex items-start">
-                        <span className="text-red-500 mr-2">✗</span>
+                        <span className="text-red-500 mr-2 flex-shrink-0">✗</span>
                         {con}
                       </li>
                     ))}
@@ -228,7 +249,14 @@ export default function CodeEditorsSection() {
             </div>
           ))}
         </div>
+
+        <div className="mt-12 text-center">
+          <p className="text-sm text-[var(--foreground)]/60">
+            Information updated as of June 2025. Pricing and features may vary. 
+            Check official websites for the most current details.
+          </p>
+        </div>
       </div>
     </section>
   );
-} 
+}
