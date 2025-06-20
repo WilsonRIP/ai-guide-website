@@ -1,51 +1,77 @@
+import Image from "next/image";
+
 export default function TipsSection() {
   const tips = [
     {
       title: "Start with Free Tiers",
       description: "Most AI tools offer generous free tiers in 2025. Try ChatGPT, Windsurf, and Perplexity free before upgrading to paid plans.",
-      icon: "💡",
+      icon: {
+        src: "/tips-icons/start-with-free-tiers-icon.png",
+        alt: "Start with Free Tiers Icon"
+      },
       color: "#3b82f6"
     },
     {
       title: "Master Reasoning Models",
       description: "Use 'thinking' prompts like 'think step by step' or 'analyze this problem' to activate reasoning modes in Claude 4, o3, and Gemini 2.5.",
-      icon: "🧠",
+      icon: {
+        src: "/tips-icons/master-reasoning-models-icon.png",
+        alt: "Master Reasoning Models Icon"
+      },
       color: "#10b981"
     },
     {
       title: "Leverage Agent Modes",
       description: "Let AI agents work autonomously on complex tasks. Use Cursor's Agent mode for coding or ChatGPT's Operators for web tasks.",
-      icon: "🤖",
+      icon: {
+        src: "/tips-icons/leverage-agent-modes-icon.png",
+        alt: "Leverage Agent Modes Icon"
+      },
       color: "#8b5cf6"
     },
     {
       title: "Be Context-Aware",
       description: "Provide rich context in your prompts. Upload documents to Claude, reference previous conversations, and be specific about your goals.",
-      icon: "📋",
+      icon: {
+        src: "/tips-icons/be-context-aware-icon.png",
+        alt: "Be Context-Aware Icon"
+      },
       color: "#f59e0b"
     },
     {
       title: "Use Multi-Modal Inputs",
       description: "Don't just type - use voice with ChatGPT, upload images to analyze, and share screens with Copilot Vision for better assistance.",
-      icon: "🎭",
+      icon: {
+        src: "/tips-icons/use-multi-modal-inputs-icon.png",
+        alt: "Use Multi-Modal Inputs Icon"
+      },
       color: "#ef4444"
     },
     {
       title: "Protect Your Privacy",
       description: "Use privacy modes when available, understand data policies, and consider local models for sensitive work. Enable Claude's privacy mode or use private search in Perplexity.",
-      icon: "🛡️",
+      icon: {
+        src: "/tips-icons/protect-your-privacy-icon.png",
+        alt: "Protect Your Privacy Icon"
+      },
       color: "#06b6d4"
     },
     {
       title: "Build AI Tool Stacks",
       description: "Combine specialized tools: Cursor for coding, Perplexity for research, Claude for analysis. Each excels at different tasks.",
-      icon: "🔗",
+      icon: {
+        src: "/tips-icons/ai-tool-stack-icon.png",
+        alt: "AI Tool Stack Icon"
+      },
       color: "#ec4899"
     },
     {
       title: "Optimize for Cost",
       description: "Use free tiers strategically, time usage during off-peak hours for APIs, and choose the right model size for your task complexity.",
-      icon: "💰",
+      icon: {
+        src: "/tips-icons/optimize-for-cost-icon.png",
+        alt: "Optimize for Cost Icon"
+      },
       color: "#84cc16"
     }
   ];
@@ -148,7 +174,13 @@ export default function TipsSection() {
               style={{animationDelay: `${index * 0.1}s`}}
             >
               <div className="flex items-center mb-4">
-                <span className="text-3xl mr-3">{tip.icon}</span>
+                <Image 
+                  src={tip.icon.src}
+                  alt={tip.icon.alt}
+                  width={24}
+                  height={24}
+                  className="mr-3"
+                />
                 <h3 className="text-lg font-bold" style={{color: tip.color}}>
                   {tip.title}
                 </h3>
