@@ -26,6 +26,12 @@ export default function Header() {
               AI Chatbots
             </a>
             <a
+              href="#voice-ai"
+              className="hidden sm:inline-flex bg-white/20 text-white px-4 py-2 rounded-lg font-medium hover:bg-white/30 transition-all text-sm"
+            >
+              Voice AI
+            </a>
+            <a
               href="#editors"
               className="sm:hidden bg-white text-indigo-600 px-4 py-2 rounded-lg font-medium hover:bg-white/90 transition-all text-sm"
             >
