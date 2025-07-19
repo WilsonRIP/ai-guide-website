@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Outfit } from "next/font/google";
+import { Geist, Geist_Mono, Outfit, Bungee, Space_Grotesk, Comic_Neue } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -16,6 +16,24 @@ const outfit = Outfit({
   variable: "--font-outfit",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
+});
+
+const bungee = Bungee({
+  variable: "--font-bungee",
+  subsets: ["latin"],
+  weight: ["400"],
+});
+
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+});
+
+const comicNeue = Comic_Neue({
+  variable: "--font-comic-neue",
+  subsets: ["latin"],
+  weight: ["300", "400", "700"],
 });
 
 export const metadata: Metadata = {
@@ -38,7 +56,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${outfit.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${outfit.variable} ${bungee.variable} ${spaceGrotesk.variable} ${comicNeue.variable} antialiased`}
       >
         {children}
       </body>

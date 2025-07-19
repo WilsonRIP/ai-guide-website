@@ -1,8 +1,9 @@
 import Image from "next/image";
+import React from "react";
 
 interface Editor {
   name: string;
-  description: string;
+  description: string | React.ReactNode;
   features: string[];
   pricing: string;
   pros: string[];
@@ -18,7 +19,13 @@ interface Editor {
 const editors: Editor[] = [
   {
     name: "Cursor",
-    description: "The leading AI-powered code editor built on VS Code, valued at $9 billion in 2025. Features advanced AI capabilities including autonomous agent mode and deep codebase understanding.",
+    description: (
+      <>
+        The leading AI-powered code editor built on VS Code, valued at over{" "}
+        <span className="text-highlight-green">$9 billion</span> in 2025. Features 
+        advanced AI capabilities including autonomous agent mode and deep codebase understanding.
+      </>
+    ),
     features: [
       "AI-powered autocomplete and multi-line edits",
       "Chat with your entire codebase",
@@ -155,106 +162,188 @@ const editors: Editor[] = [
       alt: "Replit AI Code Editor Icon"
     },
     color: "#f59e0b"
+  },
+  {
+    name: "Kiro",
+    description: (
+      <>
+        The next-generation AI-powered IDE and assistant designed for developers. Features autonomous 
+        coding capabilities, intelligent project management, and seamless integration with modern development workflows. 
+        Built with <span className="text-highlight-purple">cutting-edge AI technology</span> for 2025.
+      </>
+    ),
+    features: [
+      "Autonomous coding and file management",
+      "Intelligent project scaffolding",
+      "Context-aware code suggestions",
+      "Multi-file refactoring capabilities",
+      "Built-in terminal and git integration",
+      "Real-time collaboration features",
+      "Advanced debugging and testing tools",
+      "Customizable AI behavior and workflows"
+    ],
+    pricing: "Free tier available, Pro plans starting soon",
+    pros: [
+      "Cutting-edge autonomous AI capabilities",
+      "Intuitive and modern interface",
+      "Excellent context understanding",
+      "Strong focus on developer productivity",
+      "Active development and innovation",
+      "Great performance and responsiveness"
+    ],
+    cons: [
+      "Still in active development",
+      "Limited third-party integrations",
+      "Learning curve for advanced features",
+      "Pricing structure not yet finalized"
+    ],
+    website: "https://kiro.ai",
+    logo: {
+      src: "/code-editor-icons/kiro-ai-code-editor-icon.svg",
+      alt: "Kiro AI Code Editor Icon"
+    },
+    color: "#e11d48"
   }
 ];
 
 export default function CodeEditorsSection() {
   return (
-    <section id="editors" className="py-20 px-6 bg-[var(--muted)]">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-outfit font-bold text-gradient mb-6">
-            AI Code Editors - 2025 Edition
+    <section id="editors" className="py-24 px-6 section-gradient relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400/20 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-400/20 rounded-full blur-3xl"></div>
+      </div>
+      
+      <div className="max-w-7xl mx-auto relative">
+        <div className="text-center mb-20 animate-fade-in">
+          <div className="inline-flex items-center bg-blue-50 dark:bg-blue-900/20 px-4 py-2 rounded-full mb-6">
+            <span className="text-blue-600 dark:text-blue-400 text-sm font-semibold">💻 Featured Tools</span>
+          </div>
+          <h2 className="text-5xl md:text-6xl font-outfit font-bold heading-gradient mb-8 text-balance">
+            AI Code Editors
+            <span className="block text-3xl md:text-4xl font-normal text-[var(--foreground)]/60 mt-2">
+              2025 Edition
+            </span>
           </h2>
-          <p className="text-xl text-[var(--foreground)]/70 max-w-3xl mx-auto">
+          <p className="text-xl text-[var(--foreground)]/70 max-w-4xl mx-auto leading-relaxed text-balance">
             Transform your coding experience with these cutting-edge AI-enhanced development environments. 
             Updated with the latest features, pricing, and capabilities for 2025.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           {editors.map((editor, index) => (
             <div 
               key={editor.name}
-              className="bg-[var(--card-bg)] rounded-2xl p-8 card-hover animate-slide-in border border-[var(--border)]"
-              style={{animationDelay: `${index * 0.1}s`}}
+              className="bg-[var(--card-bg)] rounded-3xl p-8 card-hover card-glow animate-scale-in border border-[var(--border)] relative group"
+              style={{animationDelay: `${index * 0.15}s`}}
             >
-              <div className="flex items-center mb-6">
-                <Image 
-                  src={editor.logo.src}
-                  alt={editor.logo.alt}
-                  className="w-12 h-12 mr-4"
-                  width={48}
-                  height={48}
-                />
-                <div>
-                  <h3 className="text-2xl font-bold" style={{color: editor.color}}>
+              {/* Gradient border effect */}
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
+              <div className="flex items-center mb-8">
+                <div className="relative">
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white to-gray-100 dark:from-gray-800 dark:to-gray-900 shadow-lg"></div>
+                  <Image 
+                    src={editor.logo.src}
+                    alt={editor.logo.alt}
+                    className="w-16 h-16 relative z-10 p-2"
+                    width={64}
+                    height={64}
+                  />
+                </div>
+                <div className="ml-5">
+                  <h3 className="text-3xl font-bungee mb-1" style={{color: editor.color}}>
                     {editor.name}
                   </h3>
-                  <p className="text-[var(--foreground)]/60">{editor.pricing}</p>
+                  <div className="flex items-center space-x-2">
+                    <span className="text-[var(--foreground)]/60 font-medium">{editor.pricing}</span>
+                    <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                  </div>
                 </div>
               </div>
 
-              <p className="text-[var(--foreground)]/80 mb-6 leading-relaxed">
+              <p className="text-[var(--foreground)]/80 mb-8 leading-relaxed font-comic-neue text-lg">
                 {editor.description}
               </p>
 
-              <div className="mb-6">
-                <h4 className="font-semibold mb-3 text-[var(--foreground)]">Key Features:</h4>
-                <ul className="grid grid-cols-1 gap-2">
-                  {editor.features.map((feature) => (
-                    <li key={feature} className="flex items-center text-sm text-[var(--foreground)]/70">
-                      <span className="w-2 h-2 rounded-full mr-3 flex-shrink-0" style={{backgroundColor: editor.color}}></span>
-                      {feature}
-                    </li>
+              <div className="mb-8">
+                <h4 className="font-bold mb-4 text-[var(--foreground)] text-lg flex items-center">
+                  <span className="w-6 h-6 rounded-lg mr-3 flex items-center justify-center text-white text-sm" style={{backgroundColor: editor.color}}>
+                    ✨
+                  </span>
+                  Key Features
+                </h4>
+                <div className="grid grid-cols-1 gap-3">
+                  {editor.features.map((feature, idx) => (
+                    <div key={feature} className="flex items-start p-3 bg-[var(--muted)] rounded-xl hover:bg-[var(--muted)]/80 transition-colors">
+                      <span className="w-3 h-3 rounded-full mr-3 flex-shrink-0 mt-1" style={{backgroundColor: editor.color}}></span>
+                      <span className="text-sm text-[var(--foreground)]/80 font-medium">{feature}</span>
+                    </div>
                   ))}
-                </ul>
+                </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-                <div>
-                  <h4 className="font-semibold mb-2 text-green-600">Pros:</h4>
-                  <ul className="text-sm text-[var(--foreground)]/70 space-y-1">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+                <div className="bg-green-50 dark:bg-green-900/20 p-4 rounded-2xl">
+                  <h4 className="font-bold mb-3 text-green-700 dark:text-green-400 flex items-center">
+                    <span className="mr-2">👍</span>
+                    Pros
+                  </h4>
+                  <ul className="space-y-2">
                     {editor.pros.map((pro) => (
-                      <li key={pro} className="flex items-start">
-                        <span className="text-green-500 mr-2 flex-shrink-0">✓</span>
-                        {pro}
+                      <li key={pro} className="flex items-start text-sm text-green-800 dark:text-green-300">
+                        <span className="text-green-600 mr-2 flex-shrink-0 font-bold">✓</span>
+                        <span className="font-medium">{pro}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
-                <div>
-                  <h4 className="font-semibold mb-2 text-red-600">Cons:</h4>
-                  <ul className="text-sm text-[var(--foreground)]/70 space-y-1">
+                <div className="bg-amber-50 dark:bg-amber-900/20 p-4 rounded-2xl">
+                  <h4 className="font-bold mb-3 text-amber-700 dark:text-amber-400 flex items-center">
+                    <span className="mr-2">⚠️</span>
+                    Considerations
+                  </h4>
+                  <ul className="space-y-2">
                     {editor.cons.map((con) => (
-                      <li key={con} className="flex items-start">
-                        <span className="text-red-500 mr-2 flex-shrink-0">✗</span>
-                        {con}
+                      <li key={con} className="flex items-start text-sm text-amber-800 dark:text-amber-300">
+                        <span className="text-amber-600 mr-2 flex-shrink-0 font-bold">•</span>
+                        <span className="font-medium">{con}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
               </div>
 
-              <a 
-                href={editor.website}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center px-6 py-3 rounded-lg font-semibold text-white transition-all transform hover:scale-105"
-                style={{backgroundColor: editor.color}}
-              >
-                Visit {editor.name}
-                <span className="ml-2">→</span>
-              </a>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <a 
+                  href={editor.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 inline-flex items-center justify-center px-6 py-4 rounded-2xl font-bold text-white transition-all transform hover:scale-105 hover:shadow-2xl focus-ring text-center"
+                  style={{backgroundColor: editor.color}}
+                >
+                  <span className="mr-2">🚀</span>
+                  Try {editor.name}
+                  <span className="ml-2">→</span>
+                </a>
+                <button className="px-4 py-4 bg-[var(--muted)] hover:bg-[var(--border)] rounded-2xl transition-colors focus-ring">
+                  <span className="text-xl">🔖</span>
+                </button>
+              </div>
             </div>
           ))}
         </div>
 
-        <div className="mt-12 text-center">
-          <p className="text-sm text-[var(--foreground)]/60">
-            Information updated as of June 2025. Pricing and features may vary. 
-            Check official websites for the most current details.
-          </p>
+        <div className="mt-16 text-center">
+          <div className="bg-[var(--card-bg)] rounded-2xl p-6 border border-[var(--border)] max-w-2xl mx-auto">
+            <p className="text-sm text-[var(--foreground)]/70 mb-2">
+              <span className="font-semibold">📅 Last Updated:</span> June 2025
+            </p>
+            <p className="text-xs text-[var(--foreground)]/60">
+              Pricing and features may vary. Check official websites for the most current details.
+            </p>
+          </div>
         </div>
       </div>
     </section>

@@ -232,99 +232,200 @@ const voiceAITools: VoiceAI[] = [
     },
     color: "#0ea5e9",
     developer: "Descript"
+  },
+  {
+    name: "PlayHT",
+    description: "Advanced AI voice generator with ultra-realistic speech synthesis and voice cloning. Create professional-quality voiceovers with emotion control and custom voice training.",
+    features: [
+      "Ultra-realistic AI voices",
+      "Instant voice cloning",
+      "Emotion and style control",
+      "Multi-language support",
+      "Real-time voice generation",
+      "API integration",
+      "Commercial usage rights",
+      "Voice speed and pitch control"
+    ],
+    pricing: "Free tier available, Creator $19/month, Pro $39/month",
+    pros: [
+      "Exceptional voice quality",
+      "Fast voice cloning",
+      "Great API documentation",
+      "Affordable pricing tiers",
+      "Regular feature updates",
+      "Good customer support"
+    ],
+    cons: [
+      "Limited free tier minutes",
+      "Some voices need improvement",
+      "Processing delays during peak times",
+      "Limited offline capabilities"
+    ],
+    website: "https://play.ht",
+    logo: {
+      src: "/voice-ai-icons/playht-icon.svg",
+      alt: "PlayHT Voice AI Icon"
+    },
+    color: "#7c3aed",
+    developer: "PlayHT"
+  },
+  {
+    name: "Lovo AI",
+    description: "Professional AI voice generator with 500+ voices in 100+ languages. Perfect for content creators, marketers, and businesses needing high-quality voiceovers at scale.",
+    features: [
+      "500+ AI voices in 100+ languages",
+      "Voice cloning technology",
+      "Emotion and emphasis control",
+      "Background music integration",
+      "Batch processing capabilities",
+      "Team collaboration tools",
+      "White-label solutions",
+      "Advanced pronunciation editor"
+    ],
+    pricing: "Free tier available, Basic $24/month, Pro $48/month",
+    pros: [
+      "Massive voice library",
+      "Excellent language coverage",
+      "Professional editing features",
+      "Good for enterprise use",
+      "Strong collaboration tools",
+      "White-label options available"
+    ],
+    cons: [
+      "Can be expensive for individuals",
+      "Interface can be overwhelming",
+      "Some voices lack naturalness",
+      "Limited voice cloning on lower tiers"
+    ],
+    website: "https://lovo.ai",
+    logo: {
+      src: "/voice-ai-icons/lovo-ai-icon.svg",
+      alt: "Lovo AI Voice Generator Icon"
+    },
+    color: "#f97316",
+    developer: "Lovo AI"
   }
 ];
 
 export default function VoiceAISection() {
   return (
-    <section id="voice-ai" className="py-20 px-6 bg-[var(--muted)]">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-6">
-            AI Voice & Speech Tools - 2025 Edition
+    <section id="voice-ai" className="py-24 px-6 section-gradient relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute top-32 left-20 w-80 h-80 bg-orange-400/30 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-32 right-20 w-96 h-96 bg-cyan-400/30 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-purple-400/20 rounded-full blur-3xl"></div>
+      </div>
+      
+      <div className="max-w-7xl mx-auto relative">
+        <div className="text-center mb-20 animate-fade-in">
+          <div className="inline-flex items-center bg-orange-50 dark:bg-orange-900/20 px-4 py-2 rounded-full mb-6">
+            <span className="text-orange-600 dark:text-orange-400 text-sm font-semibold">🎤 Voice AI</span>
+          </div>
+          <h2 className="text-5xl md:text-6xl font-bold heading-gradient mb-8 text-balance">
+            AI Voice & Speech Tools
+            <span className="block text-3xl md:text-4xl font-normal text-[var(--foreground)]/60 mt-2">
+              2025 Edition
+            </span>
           </h2>
-          <p className="text-xl text-[var(--foreground)]/70 max-w-3xl mx-auto">
+          <p className="text-xl text-[var(--foreground)]/70 max-w-4xl mx-auto leading-relaxed text-balance">
             Transform text into lifelike speech with cutting-edge AI voice generation, cloning, and synthesis tools. 
             Create professional voiceovers, audiobooks, and custom voices with unprecedented quality and control.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
           {voiceAITools.map((tool, index) => (
             <div 
               key={tool.name}
-              className="bg-[var(--card-bg)] rounded-2xl p-6 card-hover animate-slide-in border border-[var(--border)]"
-              style={{animationDelay: `${index * 0.1}s`}}
+              className="bg-[var(--card-bg)] rounded-3xl p-7 card-hover card-glow animate-bounce-in border border-[var(--border)] relative group"
+              style={{animationDelay: `${index * 0.12}s`}}
             >
-              <div className="flex items-center mb-4">
-                <Image 
-                  src={tool.logo.src}
-                  alt={tool.logo.alt}
-                  width={48}
-                  height={48}
-                  className="mr-3 rounded-lg"
-                />
-                <div>
-                  <h3 className="text-xl font-bold" style={{color: tool.color}}>
+              {/* Gradient border effect */}
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" 
+                   style={{background: `linear-gradient(135deg, ${tool.color}20, transparent)`}}></div>
+              <div className="flex items-center mb-6">
+                <div className="relative">
+                  <div className="absolute inset-0 rounded-2xl shadow-lg" style={{backgroundColor: `${tool.color}15`}}></div>
+                  <div className="relative z-10 w-14 h-14 rounded-2xl flex items-center justify-center" style={{backgroundColor: `${tool.color}10`}}>
+                    <span className="text-2xl">🎤</span>
+                  </div>
+                </div>
+                <div className="ml-4">
+                  <h3 className="text-2xl font-bungee mb-1" style={{color: tool.color}}>
                     {tool.name}
                   </h3>
-                  <p className="text-sm text-[var(--foreground)]/60">{tool.developer}</p>
+                  <p className="text-sm text-[var(--foreground)]/60 font-medium">{tool.developer}</p>
                 </div>
               </div>
 
-              <p className="text-[var(--foreground)]/80 mb-4 text-sm leading-relaxed">
+              <p className="text-[var(--foreground)]/80 mb-6 text-sm leading-relaxed">
                 {tool.description}
               </p>
 
-              <div className="mb-4">
-                <p className="text-sm font-semibold text-[var(--foreground)]/70 mb-1">
-                  💰 {tool.pricing}
-                </p>
-              </div>
-
-              <div className="mb-4">
-                <h4 className="font-semibold mb-2 text-[var(--foreground)] text-sm">Key Features:</h4>
-                <ul className="space-y-1">
-                  {tool.features.slice(0, 4).map((feature) => (
-                    <li key={feature} className="flex items-center text-xs text-[var(--foreground)]/70">
-                      <span className="w-1.5 h-1.5 rounded-full mr-2 flex-shrink-0" style={{backgroundColor: tool.color}}></span>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="mb-4">
-                <h4 className="font-semibold mb-2 text-green-600 text-sm">Pros:</h4>
-                <ul className="space-y-1">
-                  {tool.pros.slice(0, 3).map((pro) => (
-                    <li key={pro} className="flex items-start text-xs text-[var(--foreground)]/70">
-                      <span className="text-green-500 mr-2 text-xs flex-shrink-0">✓</span>
-                      {pro}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
               <div className="mb-6">
-                <h4 className="font-semibold mb-2 text-amber-600 text-sm">Cons:</h4>
-                <ul className="space-y-1">
-                  {tool.cons.slice(0, 2).map((con) => (
-                    <li key={con} className="flex items-start text-xs text-[var(--foreground)]/70">
-                      <span className="text-amber-500 mr-2 text-xs flex-shrink-0">⚠</span>
-                      {con}
-                    </li>
+                <div className="bg-[var(--muted)] rounded-xl p-3 flex items-center">
+                  <span className="text-lg mr-2">💰</span>
+                  <span className="text-sm font-bold text-[var(--foreground)]">{tool.pricing}</span>
+                </div>
+              </div>
+
+              <div className="mb-5">
+                <h4 className="font-bold mb-3 text-[var(--foreground)] text-sm flex items-center">
+                  <span className="w-5 h-5 rounded-lg mr-2 flex items-center justify-center text-white text-xs" style={{backgroundColor: tool.color}}>
+                    🎵
+                  </span>
+                  Key Features
+                </h4>
+                <div className="space-y-2">
+                  {tool.features.slice(0, 4).map((feature) => (
+                    <div key={feature} className="flex items-start p-2 bg-[var(--muted)] rounded-lg hover:bg-[var(--muted)]/80 transition-colors">
+                      <span className="w-2 h-2 rounded-full mr-2 flex-shrink-0 mt-1" style={{backgroundColor: tool.color}}></span>
+                      <span className="text-xs text-[var(--foreground)]/80 font-medium">{feature}</span>
+                    </div>
                   ))}
-                </ul>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 gap-4 mb-6">
+                <div className="bg-green-50 dark:bg-green-900/20 p-3 rounded-xl">
+                  <h4 className="font-bold mb-2 text-green-700 dark:text-green-400 text-sm flex items-center">
+                    <span className="mr-2">👍</span>
+                    Strengths
+                  </h4>
+                  <div className="space-y-1">
+                    {tool.pros.slice(0, 3).map((pro) => (
+                      <div key={pro} className="flex items-start text-xs text-green-800 dark:text-green-300">
+                        <span className="text-green-600 mr-2 text-xs flex-shrink-0 font-bold">✓</span>
+                        <span className="font-medium">{pro}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="bg-amber-50 dark:bg-amber-900/20 p-3 rounded-xl">
+                  <h4 className="font-bold mb-2 text-amber-700 dark:text-amber-400 text-sm flex items-center">
+                    <span className="mr-2">⚠️</span>
+                    Considerations
+                  </h4>
+                  <div className="space-y-1">
+                    {tool.cons.slice(0, 2).map((con) => (
+                      <div key={con} className="flex items-start text-xs text-amber-800 dark:text-amber-300">
+                        <span className="text-amber-600 mr-2 text-xs flex-shrink-0 font-bold">•</span>
+                        <span className="font-medium">{con}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
 
               <a 
                 href={tool.website}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-4 py-2 rounded-lg font-semibold text-white text-sm transition-all transform hover:scale-105 w-full justify-center"
+                className="inline-flex items-center justify-center px-5 py-3 rounded-2xl font-bold text-white text-sm transition-all transform hover:scale-105 hover:shadow-xl w-full focus-ring"
                 style={{backgroundColor: tool.color}}
               >
+                <span className="mr-2">🎤</span>
                 Try {tool.name}
                 <span className="ml-2">→</span>
               </a>
@@ -332,11 +433,63 @@ export default function VoiceAISection() {
           ))}
         </div>
 
-        <div className="mt-12 text-center">
-          <p className="text-sm text-[var(--foreground)]/60">
-            Information updated as of January 2025. Features and pricing may vary. 
-            Check official websites for the most current details and availability.
-          </p>
+        {/* 2025 Highlights Section */}
+        <div className="mt-16 mb-12">
+          <div className="bg-gradient-to-r from-orange-500/10 to-purple-500/10 rounded-3xl p-8 border border-orange-200 dark:border-orange-800">
+            <div className="text-center mb-8">
+              <h3 className="text-3xl font-bold heading-gradient mb-4">🚀 2025 Voice AI Breakthroughs</h3>
+              <p className="text-[var(--foreground)]/70 max-w-3xl mx-auto">
+                The latest advancements in AI voice technology are revolutionizing how we create and interact with audio content.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="bg-[var(--card-bg)] rounded-2xl p-6 text-center">
+                <div className="w-12 h-12 bg-blue-500/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl">🧠</span>
+                </div>
+                <h4 className="font-bold text-[var(--foreground)] mb-2">Neural Voice Synthesis</h4>
+                <p className="text-sm text-[var(--foreground)]/70">
+                  Advanced neural networks create incredibly realistic voices with natural emotion and intonation.
+                </p>
+              </div>
+              
+              <div className="bg-[var(--card-bg)] rounded-2xl p-6 text-center">
+                <div className="w-12 h-12 bg-green-500/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl">⚡</span>
+                </div>
+                <h4 className="font-bold text-[var(--foreground)] mb-2">Real-time Generation</h4>
+                <p className="text-sm text-[var(--foreground)]/70">
+                  Instant voice generation and cloning with minimal latency for live applications.
+                </p>
+              </div>
+              
+              <div className="bg-[var(--card-bg)] rounded-2xl p-6 text-center">
+                <div className="w-12 h-12 bg-purple-500/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl">🌍</span>
+                </div>
+                <h4 className="font-bold text-[var(--foreground)] mb-2">Multilingual Mastery</h4>
+                <p className="text-sm text-[var(--foreground)]/70">
+                  Support for 100+ languages with native accent and pronunciation accuracy.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-16 text-center">
+          <div className="bg-[var(--card-bg)] rounded-2xl p-6 border border-[var(--border)] max-w-2xl mx-auto">
+            <div className="flex items-center justify-center mb-3">
+              <span className="text-2xl mr-2">🎵</span>
+              <h4 className="font-bold text-[var(--foreground)]">Voice AI Revolution</h4>
+            </div>
+            <p className="text-sm text-[var(--foreground)]/70 mb-2">
+              <span className="font-semibold">📅 Last Updated:</span> January 2025
+            </p>
+            <p className="text-xs text-[var(--foreground)]/60">
+              Features and pricing may vary. Check official websites for the most current details and availability.
+            </p>
+          </div>
         </div>
       </div>
     </section>

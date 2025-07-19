@@ -225,94 +225,125 @@ const chatbots: Chatbot[] = [
 
 export default function ChatbotsSection() {
   return (
-    <section id="chatbots" className="py-20 px-6">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-6">
-            AI Chatbots & Assistants - 2025 Edition
+    <section id="chatbots" className="py-24 px-6 section-gradient-alt relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute top-32 right-20 w-80 h-80 bg-green-400/30 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-32 left-20 w-96 h-96 bg-indigo-400/30 rounded-full blur-3xl"></div>
+      </div>
+      
+      <div className="max-w-7xl mx-auto relative">
+        <div className="text-center mb-20 animate-fade-in">
+          <div className="inline-flex items-center bg-green-50 dark:bg-green-900/20 px-4 py-2 rounded-full mb-6">
+            <span className="text-green-600 dark:text-green-400 text-sm font-semibold">🤖 AI Assistants</span>
+          </div>
+          <h2 className="text-5xl md:text-6xl font-bold heading-gradient mb-8 text-balance">
+            AI Chatbots & Assistants
+            <span className="block text-3xl md:text-4xl font-normal text-[var(--foreground)]/60 mt-2">
+              2025 Edition
+            </span>
           </h2>
-          <p className="text-xl text-[var(--foreground)]/70 max-w-3xl mx-auto">
+          <p className="text-xl text-[var(--foreground)]/70 max-w-4xl mx-auto leading-relaxed text-balance">
             Discover the most advanced AI assistants featuring the latest models, enhanced reasoning capabilities, 
             and cutting-edge features for coding, research, creativity, and productivity in 2025.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
           {chatbots.map((chatbot, index) => (
             <div 
               key={chatbot.name}
-              className="bg-[var(--card-bg)] rounded-2xl p-6 card-hover animate-slide-in border border-[var(--border)]"
+              className="bg-[var(--card-bg)] rounded-3xl p-7 card-hover card-glow animate-bounce-in border border-[var(--border)] relative group"
               style={{animationDelay: `${index * 0.1}s`}}
             >
-              <div className="flex items-center mb-4">
-                <Image 
-                  src={chatbot.logo.src}
-                  alt={chatbot.logo.alt}
-                  width={48}
-                  height={48}
-                  className="mr-3"
-                />
-                <div>
-                  <h3 className="text-xl font-bold" style={{color: chatbot.color}}>
+              {/* Gradient border effect */}
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" 
+                   style={{background: `linear-gradient(135deg, ${chatbot.color}20, transparent)`}}></div>
+              <div className="flex items-center mb-6">
+                <div className="relative">
+                  <div className="absolute inset-0 rounded-2xl shadow-lg" style={{backgroundColor: `${chatbot.color}20`}}></div>
+                  <Image 
+                    src={chatbot.logo.src}
+                    alt={chatbot.logo.alt}
+                    width={56}
+                    height={56}
+                    className="relative z-10 p-2"
+                  />
+                </div>
+                <div className="ml-4">
+                  <h3 className="text-2xl font-bungee mb-1" style={{color: chatbot.color}}>
                     {chatbot.name}
                   </h3>
-                  <p className="text-sm text-[var(--foreground)]/60">{chatbot.developer}</p>
+                  <p className="text-sm text-[var(--foreground)]/60 font-medium">{chatbot.developer}</p>
                 </div>
               </div>
 
-              <p className="text-[var(--foreground)]/80 mb-4 text-sm leading-relaxed">
+              <p className="text-[var(--foreground)]/80 mb-6 text-sm leading-relaxed">
                 {chatbot.description}
               </p>
 
-              <div className="mb-4">
-                <p className="text-sm font-semibold text-[var(--foreground)]/70 mb-1">
-                  💰 {chatbot.pricing}
-                </p>
+              <div className="mb-6">
+                <div className="bg-[var(--muted)] rounded-xl p-3 flex items-center">
+                  <span className="text-lg mr-2">💰</span>
+                  <span className="text-sm font-bold text-[var(--foreground)]">{chatbot.pricing}</span>
+                </div>
               </div>
 
-              <div className="mb-4">
-                <h4 className="font-semibold mb-2 text-[var(--foreground)] text-sm">Key Strengths:</h4>
-                <ul className="space-y-1">
+              <div className="mb-5">
+                <h4 className="font-bold mb-3 text-[var(--foreground)] text-sm flex items-center">
+                  <span className="w-5 h-5 rounded-lg mr-2 flex items-center justify-center text-white text-xs" style={{backgroundColor: chatbot.color}}>
+                    ⚡
+                  </span>
+                  Key Strengths
+                </h4>
+                <div className="space-y-2">
                   {chatbot.strengths.slice(0, 4).map((strength) => (
-                    <li key={strength} className="flex items-center text-xs text-[var(--foreground)]/70">
-                      <span className="w-1.5 h-1.5 rounded-full mr-2 flex-shrink-0" style={{backgroundColor: chatbot.color}}></span>
-                      {strength}
-                    </li>
+                    <div key={strength} className="flex items-start p-2 bg-[var(--muted)] rounded-lg hover:bg-[var(--muted)]/80 transition-colors">
+                      <span className="w-2 h-2 rounded-full mr-2 flex-shrink-0 mt-1" style={{backgroundColor: chatbot.color}}></span>
+                      <span className="text-xs text-[var(--foreground)]/80 font-medium">{strength}</span>
+                    </div>
                   ))}
-                </ul>
+                </div>
               </div>
 
-              <div className="mb-4">
-                <h4 className="font-semibold mb-2 text-green-600 text-sm">Best For:</h4>
-                <ul className="space-y-1">
+              <div className="mb-5">
+                <h4 className="font-bold mb-2 text-green-700 dark:text-green-400 text-sm flex items-center">
+                  <span className="mr-2">🎯</span>
+                  Best For
+                </h4>
+                <div className="space-y-1">
                   {chatbot.bestFor.map((use) => (
-                    <li key={use} className="flex items-start text-xs text-[var(--foreground)]/70">
-                      <span className="text-green-500 mr-2 text-xs flex-shrink-0">✓</span>
-                      {use}
-                    </li>
+                    <div key={use} className="flex items-start text-xs text-green-800 dark:text-green-300">
+                      <span className="text-green-600 mr-2 text-xs flex-shrink-0 font-bold">✓</span>
+                      <span className="font-medium">{use}</span>
+                    </div>
                   ))}
-                </ul>
+                </div>
               </div>
 
               <div className="mb-6">
-                <h4 className="font-semibold mb-2 text-amber-600 text-sm">Limitations:</h4>
-                <ul className="space-y-1">
+                <h4 className="font-bold mb-2 text-amber-700 dark:text-amber-400 text-sm flex items-center">
+                  <span className="mr-2">⚠️</span>
+                  Considerations
+                </h4>
+                <div className="space-y-1">
                   {chatbot.limitations.map((limitation) => (
-                    <li key={limitation} className="flex items-start text-xs text-[var(--foreground)]/70">
-                      <span className="text-amber-500 mr-2 text-xs flex-shrink-0">⚠</span>
-                      {limitation}
-                    </li>
+                    <div key={limitation} className="flex items-start text-xs text-amber-800 dark:text-amber-300">
+                      <span className="text-amber-600 mr-2 text-xs flex-shrink-0 font-bold">•</span>
+                      <span className="font-medium">{limitation}</span>
+                    </div>
                   ))}
-                </ul>
+                </div>
               </div>
 
               <a 
                 href={chatbot.website}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-4 py-2 rounded-lg font-semibold text-white text-sm transition-all transform hover:scale-105 w-full justify-center"
+                className="inline-flex items-center justify-center px-5 py-3 rounded-2xl font-bold text-white text-sm transition-all transform hover:scale-105 hover:shadow-xl w-full focus-ring"
                 style={{backgroundColor: chatbot.color}}
               >
+                <span className="mr-2">🚀</span>
                 Try {chatbot.name}
                 <span className="ml-2">→</span>
               </a>
@@ -320,11 +351,15 @@ export default function ChatbotsSection() {
           ))}
         </div>
 
-        <div className="mt-12 text-center">
-          <p className="text-sm text-[var(--foreground)]/60">
-            Information updated as of June 2025. Features and pricing may vary. 
-            Check official websites for the most current details and availability.
-          </p>
+        <div className="mt-16 text-center">
+          <div className="bg-[var(--card-bg)] rounded-2xl p-6 border border-[var(--border)] max-w-2xl mx-auto">
+            <p className="text-sm text-[var(--foreground)]/70 mb-2">
+              <span className="font-semibold">📅 Last Updated:</span> June 2025
+            </p>
+            <p className="text-xs text-[var(--foreground)]/60">
+              Features and pricing may vary. Check official websites for the most current details and availability.
+            </p>
+          </div>
         </div>
       </div>
     </section>
