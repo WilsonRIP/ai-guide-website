@@ -163,7 +163,7 @@ export default function CodeEditorsSection() {
     <section id="editors" className="py-20 px-6 bg-[var(--muted)]">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-6">
+          <h2 className="text-4xl md:text-5xl font-outfit font-bold text-gradient mb-6">
             AI Code Editors - 2025 Edition
           </h2>
           <p className="text-xl text-[var(--foreground)]/70 max-w-3xl mx-auto">
